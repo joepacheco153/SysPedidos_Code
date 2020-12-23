@@ -1,0 +1,65 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar trabajador</h5>
+        </div>
+        <div class="card-body">
+          
+            <div class="row">
+              <div class="col-md-8 ">
+                <div class="form-group">
+                  <label>Empresa: </label>
+                  <select class="form-control listar" #empresa="ngModel" [(ngModel)]="trabajador.idempresa" >
+                    <option *ngFor="let empresa of empresas" [value]="empresa.idEmpresa">{{  empresa.nomEmpresa }}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8">
+                  <div class="form-group">
+                    <label>Rol: </label>
+                    <select class="form-control listar" #rol="ngModel" [(ngModel)]="trabajador.idrol" >
+                      <option *ngFor="let rol of roles" [value]="rol.idrol">{{  rol.nomrol }}</option>
+                    </select>
+                  </div>
+                </div> 
+              </div>
+              <div class="row">
+              <div class="col-md-8 ">
+                <div class="form-group">
+                <label>Ingrese DNI: </label>
+                <input type="text" class="form-control" #dni = "ngModel"  [(ngModel)]="persona.dni">
+                          <button class="btn btn-primary btn-block" (click)="listarUsuariosDni(persona.dni)">Buscar </button> 
+                          <input type="text" class="form-control" disabled="" #username = "ngModel"  [(ngModel)]="usuarios.username" >
+                          <input type="hidden" class="form-control"  #idpersona = "ngModel"  [(ngModel)]="usuarios.idusuario" >
+                        </div>
+                </div>
+              </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <div class="row justify-content-end">
+                    <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" (click)="registrarTrabajador()">Confirmar </button>
+                    </div>
+                    <div class="col-md-4">
+                      <button class="btn btn-primary btn-block" routerLink="/dashboard/app-listtrabajador">Cancelar  </button>
+                      </div>
+                  </div> 
+                  
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+

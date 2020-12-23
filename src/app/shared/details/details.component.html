@@ -1,0 +1,65 @@
+<!-- 
+    <div class="card">
+      <div class="card-header">
+    </div>
+    <div class="card-body">
+        <img style="display:block; margin:auto;width: 100%;min-height: 200px;" [src]="plato.url">
+        <h3 class="mt-2"><strong>{{plato.plato}}</strong></h3>
+        <h5 class="mt-4">
+          Precio : S/. {{plato.precio}}</h5>
+        <h4>
+          Descripción:
+        </h4>
+        {{plato.descripcion}}
+  
+        <h5>
+          Cantidad
+        </h5> 
+        <hr>
+        <div class="actions">
+          <div class="row" style="margin-left: 15px;">
+            <button class="btn btn-primary" type="button" (click)="addCount()">+</button>
+            <h5><p> {{count}}  </p></h5>
+  
+            <button class="btn btn-primary" type="button" (click)="substractionCount()">-</button>
+  
+            <button class="btn btn-primary" style="margin-left: 5px;" (click)="savePlato(plato)">Guardar</button>
+            <button class="btn btn-primary" type="button" style="margin-left: 5px;" (click)="delete()">Eliminar</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+<div class="card">
+  <div class="card-body">
+    <div class="row" style="position: relative;">
+      <img class="col-md-3" style="display:block;border-radius:30px;margin:auto;width: 40px;min-height: 40px;" [src]="plato.url">
+      <div class="col-md-4">
+        <p class="mt-2"><strong>{{plato.plato}}</strong></p> 
+
+        <p>
+          Precio : S/. <strong>{{plato.precio}}</strong>
+        </p>
+        <p style="font-size: 0.9rem;">
+          Descripción:
+          {{plato.descripcion}}
+        </p>
+        
+
+      </div>
+      <div class="col-md-5 actions" style="position: relative">
+        <div class="row" style="position:absolute;bottom:0;margin-left: 15px;padding: 10px 10px 10px;">
+          <button class="btn btn-primary"  type="button" (click)="addCount()">+</button>
+          
+            <p style="margin:0 12px;padding-top:18px ;" > {{count}} </p>
+          
+
+          <button class="btn btn-primary"   type="button" (click)="substractionCount()">-</button>
+         <hr>
+          <button class="btn btn-primary" style="margin-left: 15px;" (click)="savePlato(plato)">Guardar</button>
+          <button class="btn btn-primary" type="button" style="margin-left: 5px;" (click)="delete()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

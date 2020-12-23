@@ -1,0 +1,79 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar persona</h5>
+        </div>
+        <div class="card-body">
+           
+            <div class="row">
+              <div class="col-md-6 ">
+                <div class="form-group">
+                  <label>Nombres: </label>
+                  <input type="text" class="form-control" #nombre="ngModel" [(ngModel)]="persona.nombre">
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="form-group">
+
+                  <label>Apellidos: </label>
+                  <input type="text" class="form-control" #apellidos="ngModel" [(ngModel)]="persona.apellidos" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>DNI</label>
+                  <input type="text" class="form-control" #DNI="ngModel" [(ngModel)]="persona.dni" >
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Edad: </label>
+                  <input type="text" class="form-control" edad="ngModel" [(ngModel)]="persona.edad">
+                </div>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="form-group">
+                  <label>Telefono: </label>
+                  <input type="text" class="form-control" telefono="ngModel" [(ngModel)]="persona.telefono">
+                </div>
+              </div>
+              <div class="col-md-7 ">
+                <div class="form-group">
+                  <label>Correo: </label>
+                  <input type="text" class="form-control" correo="ngModel" [(ngModel)]="persona.correo">
+                </div>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                
+                  <div class="row justify-content-end">
+                    <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" (click)="registrarPersona()">Confirmar </button>
+                    </div>
+                    <div class="col-md-4">
+                      <button class="btn btn-primary btn-block" routerLink="/dashboard/app-listpersona">Cancelar  </button>
+                      </div>
+                  </div> 
+                  
+                   </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+

@@ -1,0 +1,63 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar usuario</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            
+            <div class="col-md-8 ">
+              <label>Ingrese DNI: </label>
+              <input type="text" class="form-control" #dni = "ngModel"  [(ngModel)]="persona.dni">
+                        <button class="btn btn-primary btn-block" (click)="listarPersonaDNI(persona.dni)">Buscar </button> 
+                        <input type="text" class="form-control" disabled="" #apellidos = "ngModel"  [(ngModel)]="persona.apellidos" >
+                        <input type="hidden" class="form-control"  #idpersona = "ngModel"  [(ngModel)]="persona.idpersona" >
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-md-8 ">
+                <div class="form-group">
+                  <label>Nombre de usuario: </label>
+                  <input type="text" class="form-control"  #nomuser = "ngModel"  [(ngModel)]="usuario.username" >
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label>Contraseña: </label>
+                  <input type="text" class="form-control"  #passuser = "ngModel"  [(ngModel)]="usuario.password" >
+                </div>
+              </div>
+              
+              
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  
+                  
+                  <div class="row justify-content-end">
+                    <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" (click)="RegistrarUsuario()">Confirmar </button>
+                    </div>
+                    <div class="col-md-4">
+                      <button class="btn btn-primary btn-block" routerLink="/dashboard/app-listpersona">Cancelar  </button>
+                      </div>
+                      
+                  </div> 
+                  
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+

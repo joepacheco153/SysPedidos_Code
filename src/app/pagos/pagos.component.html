@@ -1,0 +1,76 @@
+<div class="panel-header panel-header-sm">
+</div>
+
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Carrito de compras</h5>
+
+          <p class="category">Productos que escogiste:</p>
+          {{detalle || json}}
+          {{carrito || json }}
+        </div>
+        <div class="card-body">
+          <div *ngIf="this.carritoService.carrito_items.length ==0">
+            <h3>Buscando tus compras . . . </h3>
+           <p class="category">Pista: No hay nada</p>
+            <div style="display:flex; justify-content: center; align-items: center;">
+              <img  src="https://media.giphy.com/media/xT8qBhrlNooHBYR9f2/source.gif" style="border-radius:50%;" alt="" srcset="">
+
+            </div>
+          </div>
+          <div *ngIf="this.carritoService.carrito_items.length !=0" class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  Plato
+                </th>
+                <th>
+                  Precio
+                </th>
+                <th>
+                  Descripcion
+                </th>
+                <th>
+                  Cantidad
+                </th>
+                <th>
+                  Subtotal
+                </th>
+                <th>
+                  Acciones
+                </th>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let item of carritoService.carrito_items">
+
+                  <td>{{item.plato}}</td>
+                  <td>{{item.precio}}</td>
+                  <td>{{item.descripcion}}</td>
+                  <td>{{item.cantidad}}</td>
+                  <td>{{item.precio * item.cantidad}}</td>
+                  <td style="display: block;"><button type="button" class="btn btn-danger"
+                      (click)="deleteMenu(item.idMenu)"><i class="fa fa-trash-alt"></i></button></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {{item | json}}
+        </div>
+        <div class="container-fluid" *ngIf="this.carritoService.carrito_items.length !=0">
+          <button class="btn btn-primary btn-lg" (click)="payment()" [disabled]="loadingPayment">
+            Confirmar Pago
+            <i *ngIf="!loadingPayment" class="fas fa-angle-double-right ml-4"></i>
+            <i *ngIf="loadingPayment" class="fas fa-spinner fa-spin ml-4"></i>
+
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

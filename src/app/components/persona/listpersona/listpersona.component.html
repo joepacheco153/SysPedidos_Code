@@ -1,0 +1,47 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista de personas</h4> 
+          <div class="row justify-content-end">
+            <div class="col-md-2">
+            <button class="btn btn-primary btn-block" routerLink="/dashboard/app-addpersona">Agregar  <i class="now-ui-icons ui-1_simple-add"></i></button>
+            </div>
+          </div> 
+        </div>
+        <div class="class col-md4"></div>
+        <div class="card-body">
+          
+          <div class="table-responsive">
+            <table class="table">
+
+              <thead class=" text-primary">
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+                <th>DNI</th>
+                <th class="text-center">Acciones</th>
+              </thead>
+
+              <tbody>
+                <tr *ngFor="let persona of personas">
+                  <td>{{persona.nombre}}</td>
+                  <td>{{persona.apellidos}}</td>
+                  <td>{{persona.edad}}</td>
+                  <td>{{persona.telefono}}</td>
+                  <td>{{persona.correo}}</td>
+                  <td>{{persona.dni}}</td>
+                  <td class="text-right"><a type="button" class="btn btn-warning" [routerLink]="['/dashboard/app-edipersona', persona.idpersona]" ><i class="now-ui-icons design-2_ruler-pencil"></i></a></td>
+                  <td><a type="button" class="btn btn-danger" (click)="eliminarPersona(persona.idpersona)"><i class="now-ui-icons ui-1_simple-remove"></i></a></td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

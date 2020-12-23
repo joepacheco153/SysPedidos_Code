@@ -1,0 +1,44 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista de trabajadores</h4>
+          <div class="row justify-content-end">
+            <div class="col-md-2">
+            <button class="btn btn-primary btn-block" routerLink="/dashboard/app-addtrabajador">Agregar  <i class="now-ui-icons ui-1_simple-add"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+
+          <div class="table-responsive">
+            <table class="table">
+
+              <thead class=" text-primary">
+                <th>DNI</th>
+                <th>Nombre de usuario</th>
+                <th>Rol</th>
+                <th>Empresa</th>
+                <th>Estado</th>
+                <th class="text-right">Acciones</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let trabajador of trabajadores">
+                  <td>{{trabajador.DNI}}</td>
+                  <td>{{trabajador.username}}</td>
+                  <td>{{trabajador.nomrol}}</td>
+                  <td>{{trabajador.nomempresa}}</td>
+                  <td *ngIf= "trabajador.estado == 1">Activo</td>
+                  <td *ngIf= "trabajador.estado == 0">Inactivo</td>
+                  <td class="text-right"><a type="button" class="btn btn-warning" ><i class="now-ui-icons design-2_ruler-pencil"></i></a></td>
+                  <td><a type="button" class="btn btn-danger" (click)="eliminarTrabajador(trabajador.idtrabajador)"><i class="now-ui-icons ui-1_simple-remove"></i></a></td> 
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>

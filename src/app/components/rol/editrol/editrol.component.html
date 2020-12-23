@@ -1,0 +1,46 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Editar Rol</h5>
+        </div>
+        <div class="card-body">
+             
+            <div class="row">
+              <div class="col-md-12 ">
+                <div class="form-group">
+                  <label>Nombre de rol: </label>
+                  <input type="text" class="form-control" [(ngModel)]="rol.nomrol"  >
+                </div>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  
+                  <div class="row justify-content-end">
+                    <div class="col-md-4">
+                    <button class="btn btn-primary btn-block" (click)="modificarRol()">Confirmar </button>
+                    </div>
+                    <div class="col-md-4">
+                      <button class="btn btn-primary btn-block" routerLink="/dashboard/app-listrol" >Cancelar  </button>
+                      </div>
+                  </div>
+                    </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div> 
+  </div>
+</div>
+
+<div class="col-md-2">
+  <input type="text" class="form-control" #nomrol = "ngModel"  [(ngModel)]="rol.nomrol">
+  <button class="btn btn-primary btn-block" (click)="RegistrarRol()" >Cancelaaaaaaar  </button>
+  </div>
